@@ -143,7 +143,7 @@
 
 - (void)cancelButtonPressed
 {
-    [_activityViewController dismissViewControllerAnimated:YES completion:nil];
+    [_activityViewController dismissViewControllerAnimated:YES completion:_cancelBlock];
 }
 
 - (void)buttonPressed:(UIButton *)button

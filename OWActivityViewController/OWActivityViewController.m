@@ -45,7 +45,7 @@
     }
 }
 
-- (id)initWithViewController:(UIViewController *)viewController activities:(NSArray *)activities
+- (id)initWithViewController:(UIViewController *)viewController activities:(NSArray *)activities cancelBlock:(void (^)(void))cancelBlock
 {
     self = [super init];
     if (self) {
@@ -69,6 +69,7 @@
                                                    activities:activities];
         _activityView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _activityView.activityViewController = self;
+        _activityView.cancelBlock = cancelBlock;
         [self.view addSubview:_activityView];
         
         self.contentSizeForViewInPopover = CGSizeMake(320, self.height - 60);

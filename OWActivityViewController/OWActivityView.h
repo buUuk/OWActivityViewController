@@ -36,6 +36,8 @@
 @property (weak, nonatomic) OWActivityViewController *activityViewController;
 @property (strong, nonatomic) UIButton *cancelButton;
 
+@property (nonatomic, copy) void (^cancelBlock)(void);
+
 - (id)initWithFrame:(CGRect)frame activities:(NSArray *)activities;
 
 @end
